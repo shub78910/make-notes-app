@@ -37,8 +37,8 @@ function shownotes() {
         html += `
         <div class="output_boxes">
         <div class="flex_child">
-        <h5>Note ${index + 1}</h5><hr>
-        <p>${element}</p>
+        <h5>Note ${index + 1}</h5>
+        <p class="pbox">${element}</p>
         <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
         </div>
         </div>`
@@ -59,6 +59,8 @@ function shownotes() {
 //func for deleting notes.
 
 function dltnote(index){
+    f = confirm("Do you really want to delete this note?")
+    if (f === true) {
 
     // console.log("delte",index)
 
@@ -74,7 +76,7 @@ function dltnote(index){
     localStorage.setItem("notes", JSON.stringify(notesObj));
     shownotes()
 }
-
+}
 //search func
 
 // search = document.querySelector(".inp_ser")
