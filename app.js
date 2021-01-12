@@ -44,7 +44,7 @@ function shownotes() {
         </div>`
     });
     let noteselm = document.getElementById("notes")
-    let notessub = document.querySelector("notessub")
+    let notessub = document.querySelector(".notessub")
 
     if (notesObj.length != 0) {
         noteselm.innerHTML = html;
