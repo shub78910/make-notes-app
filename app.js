@@ -44,13 +44,15 @@ function shownotes() {
         </div>`
     });
     let noteselm = document.getElementById("notes")
+    let notessub = document.querySelector("notessub")
+
     if (notesObj.length != 0) {
         noteselm.innerHTML = html;
 
         // console.log(html)
     }
     else {
-        noteselm.innerHTML = `Please add notes using "Add notes" button!`
+        notessub.innerHTML = `Please add notes using "Add notes" button!`
     }
 }
 
