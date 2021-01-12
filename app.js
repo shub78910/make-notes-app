@@ -1,17 +1,16 @@
 let addbtn = document.querySelector(".addbtn")
-
-
 shownotes()
 
-addbtn.addEventListener("click",function(e){
+//event listener for add btn, which will take ip and store it in localStorage.
+addbtn.addEventListener("click", function (e) {
     let notes = localStorage.getItem("notes");
     let inptxtarea = document.querySelector(".input");
 
 
-    if (notes === null){
+    if (notes === null) {
         notesObj = [];
     }
-    else{
+    else {
         notesObj = JSON.parse(notes);
     }
     notesObj.push(inptxtarea.value);
@@ -21,39 +20,69 @@ addbtn.addEventListener("click",function(e){
     shownotes()
 })
 
-function shownotes(){
+//this func, basically displays all the notes stored in local storage.
+
+function shownotes() {
     let notes = localStorage.getItem("notes");
 
-    if (notes == null){
+    if (notes == null) {
         notesObj = [];
     }
-    else{
+    else {
         notesObj = JSON.parse(notes);
     }
 
-    let html="";
-    notesObj.forEach(function (element,index) {
+    let html = "";
+    notesObj.forEach(function (element, index) {
         html += `
         <div class="output_boxes">
         <div class="flex_child">
         <h5>Note ${index + 1}</h5>
         <p>${element}</p>
-        <button class="dltbtn">Delete</button>
+        <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
         </div>
         </div>`
     });
     let noteselm = document.getElementById("notes")
-    if (notesObj.length!=0){
-        noteselm.innerHTML=html;
+    if (notesObj.length != 0) {
+        noteselm.innerHTML = html;
 
-    // console.log(html)
+        // console.log(html)
     }
-    else{
-        noteselm.innerHTML=`Please add notes using "Add notes" button!`
+    else {
+        noteselm.innerHTML = `Please add notes using "Add notes" button!`
     }
 }
 
+//func for deleting notes.
 
+function dltnote(index){
+
+    // console.log("delte",index)
+
+    let notes = localStorage.getItem("notes");
+
+    if (notes == null) {
+        notesObj = [];
+    }
+    else {
+        notesObj = JSON.parse(notes);
+    }
+    notesObj.splice(index,1)
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    shownotes()
+}
+
+//search func
+
+// search = document.querySelector(".inp_ser")
+// search.addEventListener("input",search_func)
+
+// search_func(){
+//     let inputVal = search.value.toLowerCase()
+//     let opbox = document.querySelector(".output_boxes")
+//     opbox
+// }
 // localStorage.clear() 
 
 
