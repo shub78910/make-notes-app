@@ -37,7 +37,7 @@ function shownotes() {
         html += `
         <div class="output_boxes">
         <div class="flex_child">
-        <h5>Note ${index + 1}</h5>
+        <h5>Note ${index + 1}</h5><hr>
         <p>${element}</p>
         <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
         </div>
