@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0.3rem;
+}
+.nav{
+    background-color: black;
+    width: 98.5%;
+    height: 5vh;
+    padding: 0.6rem;
+}
+
+.notes{
+    font-size: 1.7rem;
+    color: white;
+}
+
+.ser{
+    float:right;
+    /* display: grid;
+    align-items:center; */
+    padding: 0.2rem;
+    margin: 0.4rem;
+    /* width: 10%; */
+}
+
+.inp_ser{
+    border: 1px black solid;
+    padding: 0.2rem;
+}
+
+.cent_cont{
+    max-width: 80%;
+    margin: auto;
+}
+
+.intro{
+    font-size: 1.7rem;
+}
+
+.input{
+    width: 20%;
+    height: 20vh;
+    border: 1px black solid;
+    padding: 0.6rem;
+}
+
+.output_boxes{
+    margin: 0.6rem;
+    display: inline-block;
+    width: 20vw;
+    padding: .1rem;
+}
+
+.flex_child{
+    /* /* flex: 1; */
+    padding: 0.6rem;
+    padding-top: 0rem;
+    border: 1px solid black; 
+}
