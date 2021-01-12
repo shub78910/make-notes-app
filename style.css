@@ -47,7 +47,7 @@ body{
 .output_boxes{
     margin: 0.6rem;
     display: inline-block;
-    width: 20vw;
+    /* width: 20vw; */
     padding: .1rem;
 }
 
