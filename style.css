@@ -87,5 +87,6 @@ body{
 .notessub{
     font-size: 3rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    background-color: black;
+    color: white;
 }
