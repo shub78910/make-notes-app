@@ -31,6 +31,13 @@ function shownotes() {
     else {
         notesObj = JSON.parse(notes);
     }
+    let notessub = document.querySelector(".notessub")
+
+    notessub.innerHTML = localStorage.getItem("notes")
+
+    notessub.addEventListener("blur", function () {
+        localStorage.setItem("notes", this.innerHTML);
+    })
 
     let html = "";
     notesObj.forEach(function (element, index) {
@@ -43,11 +50,11 @@ function shownotes() {
         </div>
         </div>`
     });
-    let noteselm = document.getElementById("notes")
-    let notessub = document.querySelector(".notessub")
+
+    // let noteselm = document.getElementById("notes")
 
     if (notesObj.length != 0) {
-        noteselm.innerHTML = html;
+        notessub.innerHTML = html;
 
         // console.log(html)
     }
@@ -58,36 +65,20 @@ function shownotes() {
 
 //func for deleting notes.
 
-function dltnote(index){
+function dltnote(index) {
     f = confirm("Do you really want to delete this note?")
     if (f === true) {
 
-    // console.log("delte",index)
+        // console.log("delte",index)
 
-    let notes = localStorage.getItem("notes");
+        let notes = localStorage.getItem("notes");
 
-    if (notes == null) {
-        notesObj = [];
-    }
-    else {
-        notesObj = JSON.parse(notes);
-    }
-    notesObj.splice(index,1)
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-    shownotes()
-}
-}
-
-
-//search func
-
-// search = document.querySelector(".inp_ser")
-// search.addEventListener("input",search_func)
-
-// search_func(){
-//     let inputVal = search.value.toLowerCase()
-//     let opbox = document.querySelector(".output_boxes")
-//     opbox
-// }
-// localStorage.clear() 
-
+        if (notes == null) {
+            notesObj = [];
+        }
+        else {
+            notesObj = JSON.parse(notes);
+        }
+        notesObj.splice(index, 1)
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        shownot
