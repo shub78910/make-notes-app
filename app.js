@@ -31,13 +31,13 @@ function shownotes() {
     else {
         notesObj = JSON.parse(notes);
     }
-    let notessub = document.querySelector(".notessub")
+    // let notessub = document.querySelector(".notessub")
 
-    notessub.innerHTML = localStorage.getItem("notes")
+    // notessub.innerHTML = localStorage.getItem("notes")
 
-    notessub.addEventListener("blur", function () {
-        localStorage.setItem("notes", this.innerHTML);
-    })
+    // notessub.addEventListener("blur", function () {
+    //     localStorage.setItem("notes", this.innerHTML);
+    // })
 
     let html = "";
     notesObj.forEach(function (element, index) {
@@ -51,7 +51,7 @@ function shownotes() {
         </div>`
     });
 
-    // let noteselm = document.getElementById("notes")
+    let notessub = document.getElementById("notes")
 
     if (notesObj.length != 0) {
         notessub.innerHTML = html;
