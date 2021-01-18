@@ -77,6 +77,8 @@ function dltnote(index){
     shownotes()
 }
 }
+
+
 //search func
 
 // search = document.querySelector(".inp_ser")
@@ -88,40 +90,4 @@ function dltnote(index){
 //     opbox
 // }
 // localStorage.clear() 
-
-
-
-
-// for (let i=0;i<100;i++){
-//     if (i%3===0){
-//         console.log("fizz")
-//         if (i%5===0){
-//             console.log("fizzbuzz")
-//         }
-//     }
-//     else if(i%5===0){
-//         console.log("buzz")
-//         if (i%3===0){
-//             console.log("fizzbuzz")
-//         }
-//     }
-//     else{
-//         console.log(i)
-//     }
-// }
-
-// for (let i=0;i<6;i++){
-//     if (i%2==0){
-//         for (let j=0;j<6;j++){
-//             process.stdout.write(" #" )
-//         }
-//     }
-//     else{
-//         for (let j=0;j<6;j++){
-//             process.stdout.write("# " )
-//         }
-//     }
-//     console.log()
-// }
-
 
