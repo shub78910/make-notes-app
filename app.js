@@ -81,4 +81,6 @@ function dltnote(index) {
         }
         notesObj.splice(index, 1)
         localStorage.setItem("notes", JSON.stringify(notesObj));
-        shownot
+        shownotes()
+    }
+    }
