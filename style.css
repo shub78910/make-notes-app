@@ -49,7 +49,7 @@ body{
 .input{
     max-width: 720px;
     width: 90%;
-    height: 40vh;
+    height: 20vh;
     border: 1px black solid;
     padding: 0.6rem;
 }
@@ -59,6 +59,7 @@ body{
     display: inline-block;
     /* width: 20vw; */
     padding: .1rem;
+    border: 2px rgb(236, 92, 92) solid;
 }
 
 
@@ -78,6 +79,34 @@ body{
     cursor: pointer;
     background-color: wheat;
 }
+
+/* here on is not my code. it is for tooltip  */
+
+.tooltip {
+  position: relative;
+  display: inline;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* until here is just for the tool tip  */
 
 .addbtn:hover{
     background-color: lightcyan;

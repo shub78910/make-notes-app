@@ -45,9 +45,11 @@ function shownotes() {
         html += `
         <div class="output_boxes">
         <div class="flex_child">
-        <h5>Note ${index + 1}</h5>
+        <h5 style="font-size:1.5rem">Note ${index + 1}</h5>
         <p class="pbox">${element}</p>
-        <button class="dltbtn" id="edit" onClick="edit(${index})">Edit Note</button>
+        <button class="dltbtn tooltip" id="edit" onClick="edit(${index})">Edit Note
+        <span class="tooltiptext">Scroll above to edit and save.</span>
+        </button>
         <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
         </div>
         </div>`
@@ -78,11 +80,14 @@ function edit(index){
     addbtn.style.display = "none"
     savebtn.style.display = "block"
     saveind.value = index;
+    // console.log(pbox)
 }
 
 //save the edited note.
 
 savebtn.addEventListener("click",function(){
+    
+
     let notes = localStorage.getItem("notes");
     notesObj = JSON.parse(notes);
 
