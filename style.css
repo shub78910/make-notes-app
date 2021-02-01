@@ -49,7 +49,7 @@ body{
 .input{
     max-width: 720px;
     width: 90%;
-    height: 100vh;
+    height: 40vh;
     border: 1px black solid;
     padding: 0.6rem;
 }
@@ -100,6 +100,7 @@ body{
     background-color: black;
     color: white;
     transition-duration: 0.5s;
+    border: 1px white solid;
 }
 
 .notessub{

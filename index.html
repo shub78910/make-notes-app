@@ -25,10 +25,14 @@
     <div>
         <h2>Add a note</h2>
         <!-- <textarea>dd</textarea> -->
-        <textarea class="input" placeholder="Add here"></textarea><br><br>
+        <textarea class="input" placeholder="Add your note here and click on `Add note` after you are done." ></textarea>
+        <textarea class="input" style="display: none;" id="saveind"></textarea>
+        <br><br>
     </div>
 
-    <button class="addbtn">Add Note</button><hr><br>
+    <button class="addbtn">Add Note</button>
+    <button class="addbtn" style="display: none;" id="savebtn">Save Changes</button>
+    <hr><br>
 
     <h2>Your Notes:<br></h2>
     <hr>

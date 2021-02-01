@@ -1,22 +1,24 @@
 let addbtn = document.querySelector(".addbtn")
+let inptxtarea = document.querySelector(".input");
+
 shownotes()
 
 //event listener for add btn, which will take ip and store it in localStorage.
 addbtn.addEventListener("click", function (e) {
     let notes = localStorage.getItem("notes");
     let inptxtarea = document.querySelector(".input");
-
-
-    if (notes === null) {
-        notesObj = [];
-    }
-    else {
-        notesObj = JSON.parse(notes);
-    }
-    notesObj.push(inptxtarea.value);
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-    inptxtarea.value = "";
-    // console.log(notesObj);   
+    if (inptxtarea.value.trim()!=0){
+        if (notes === null) {
+            notesObj = [];
+        }
+        else {
+            notesObj = JSON.parse(notes);
+        }
+        notesObj.push(inptxtarea.value);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        inptxtarea.value = "";
+        // console.log(notesObj); 
+    }  
     shownotes()
 })
 
@@ -45,6 +47,7 @@ function shownotes() {
         <div class="flex_child">
         <h5>Note ${index + 1}</h5>
         <p class="pbox">${element}</p>
+        <button class="dltbtn" id="edit" onClick="edit(${index})">Edit Note</button>
         <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
         </div>
         </div>`
@@ -61,6 +64,37 @@ function shownotes() {
         notessub.innerHTML = `Please add notes using "Add notes" button!`
     }
 }
+
+// edit a note
+
+
+function edit(index){
+    let savebtn = document.querySelector("#savebtn")
+    let saveind = document.querySelector("#saveind")
+
+    let notes = localStorage.getItem("notes");
+    notesObj = JSON.parse(notes);
+    inptxtarea.value = notesObj[index]
+    addbtn.style.display = "none"
+    savebtn.style.display = "block"
+    saveind.value = index;
+}
+
+//save the edited note.
+
+savebtn.addEventListener("click",function(){
+    let notes = localStorage.getItem("notes");
+    notesObj = JSON.parse(notes);
+
+    let saveind = document.querySelector("#saveind").value;
+    notesObj[saveind] = inptxtarea.value
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    shownotes();
+    inptxtarea.value="";
+
+    savebtn.style.display = "none"
+    addbtn.style.display = "block"
+})
 
 //func for deleting notes.
 
