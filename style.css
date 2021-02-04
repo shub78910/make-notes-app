@@ -6,6 +6,8 @@ body{
     background-color: lightcyan;
     max-width: 720px;
     margin: auto;
+    font-family: 'Yusei Magic', sans-serif;
+
 }
 
 a{
@@ -45,7 +47,6 @@ a{
 .intro{
     font-size: 1.2rem;
     font-weight: 800;
-    font-family: 'Yusei Magic', sans-serif;
 }
 
 .inptitle{

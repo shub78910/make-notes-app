@@ -106,13 +106,14 @@ savebtn.addEventListener("click",function(){
 //function to download as txt
 
 function downloadtxt(index){
-    // console.log("click")
-
-    // console.log(inptxtarea.value,index)
-
+    if (inptxtarea.value == ""){
+        alert("Please enter text before downloading.")
+    }
+    else{
     let a1 = document.querySelector(".a1");
     let blob1 = new Blob([inptxtarea.value],{type:"text/plain"})
     a1.href = URL.createObjectURL(blob1);
+    }
 }
 
 
