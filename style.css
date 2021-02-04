@@ -7,6 +7,13 @@ body{
     max-width: 720px;
     margin: auto;
 }
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: darkcyan;
+}
+
 .nav{
     background-color: black;
     width: 100%;

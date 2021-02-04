@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Write notes</title>
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="nav">
-        
+
         <div class="notes">
             MAKE NOTES
             <!-- <input class="inp_ser ser" placeholder="Search"> -->
-        
+
         </div>
     </div>
 
-<div class="cent_cont">
+    <div class="cent_cont">
         <p class="intro">Welcome to note making app. Do anything with it. Use it to write down
-        your to-do list, or pen down something important really quick and easy!</p>
-    
+            your to-do list, or pen down something important really quick and easy!</p>
 
-    <div>
-        <h2>Add a note</h2>
-        <!-- <textarea>dd</textarea> -->
-        <textarea class="input" placeholder="Add your note here and click on `Add note` after you are done." ></textarea>
-        <textarea class="input" style="display: none;" id="saveind"></textarea>
-        <br><br>
+
+        <div>
+            <h2>Add a note</h2>
+            <!-- <textarea>dd</textarea> -->
+            <textarea class="input"
+                placeholder="Add your note here and click on `Add note` after you are done."></textarea>
+            <textarea class="input" style="display: none;" id="saveind"></textarea>
+            <br><br>
+        </div>
+
+        <button class="addbtn">Add Note</button>
+        <button class="addbtn" style="display: none;" id="savebtn">Save Changes</button>
+        <button class="addbtn">
+            <a class="a1" id="${index}" onClick="downloadtxt(this.id)" download="Notemaker.pdf">Download Note</a>
+        </button>
+        <hr><br>
+
+        <h2>Your Notes:<br></h2>
+        <hr>
+        <div id="notes" class="notessub" contenteditable="false"></div>
+
+
     </div>
-
-    <button class="addbtn">Add Note</button>
-    <button class="addbtn" style="display: none;" id="savebtn">Save Changes</button>
-    <hr><br>
-
-    <h2>Your Notes:<br></h2>
-    <hr>
-    <div id="notes" class="notessub" contenteditable="false"></div>
-
-</div>
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

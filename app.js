@@ -51,6 +51,7 @@ function shownotes() {
         <span class="tooltiptext">Scroll above to edit and save.</span>
         </button>
         <button id="${index}" onClick="dltnote(this.id)" class="dltbtn">Delete</button>
+
         </div>
         </div>`
     });
@@ -100,6 +101,20 @@ savebtn.addEventListener("click",function(){
     savebtn.style.display = "none"
     addbtn.style.display = "block"
 })
+
+
+//function to download as txt
+
+function downloadtxt(index){
+    // console.log("click")
+
+    // console.log(inptxtarea.value,index)
+
+    let a1 = document.querySelector(".a1");
+    let blob1 = new Blob([inptxtarea.value],{type:"text/plain"})
+    a1.href = URL.createObjectURL(blob1);
+}
+
 
 //func for deleting notes.
 
