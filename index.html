@@ -8,23 +8,34 @@
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
-<body >
+<body>
 
     <div class="nav">
 
         <div class="notes">
             MAKE NOTES
-            <!-- <input class="inp_ser ser" placeholder="Search"> -->
-
+            <input onkeyup="searchInpfunc(this.value)" class="searchInp" placeholder="Search notes">
+        </div>
+    </div>
+    <div class="searchop">
+        <div class="output_boxes">
+            <div class="flex_child">
+                <h5 class="searchtitle titlebox" style="font-size:1.5rem"></h5>
+                <p class="searchtext pbox"></p>
+            </div>
         </div>
     </div>
 
     <div class="cent_cont">
+
         <p class="intro">Welcome to note making app. Do anything with it. Use it to write down
             your to-do list, or pen down something important really quick and easy!</p>
 
 
         <div>
+            <div class="searchRes"></div>
+            <h2>Add Title</h2>
+            <input id="title" placeholder="Add Title">
             <h2>Add a note</h2>
             <!-- <textarea>dd</textarea> -->
             <textarea class="input"
@@ -34,10 +45,10 @@
         </div>
 
         <button class="addbtn">Add Note</button>
-        
+
         <button class="addbtn" style="display: none;" id="savebtn">Save Changes</button><br><br>
 
-        <p>To download file, write your text and `download` it before adding the note. 
+        <p>To download file, write your text and `download` it before adding the note.
             If you've already added, click on `edit note` and download.</p>
         <!-- this is the button for downloading -->
         <button class="addbtn">
@@ -46,6 +57,7 @@
         <hr><br>
 
         <h2>Your Notes:<br></h2>
+        
         <hr>
         <div id="notes" class="notessub" contenteditable="false"></div>
 
