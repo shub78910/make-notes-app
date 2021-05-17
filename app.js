@@ -102,7 +102,7 @@ savebtn.addEventListener("click",function(){
     notesObj = JSON.parse(notes);
 
     let saveind = document.querySelector("#saveind").value;
-    notesObj[saveind] = inptxtarea.value
+    notesObj[saveind].text = inptxtarea.value
     localStorage.setItem("notes", JSON.stringify(notesObj));
     shownotes();
     inptxtarea.value="";
